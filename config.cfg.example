@@ -1,6 +1,11 @@
+[general]
+filename =  iamahappycsv.csv
+
 [ou]
 base = "OU=OU, DC=DC, DC=DC"
 disabled = "OU=OU, DC=DC, DC=DC"
+reunisten = "OU=OU, DC=DC, DC=DC"
+
 [user]
 pw="verysafepassword"
 domain="domain.local"
