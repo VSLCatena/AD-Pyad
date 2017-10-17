@@ -1,5 +1,12 @@
 [general]
 filename =  iamahappycsv.csv
+debuglevel = 0
+
+[mail]
+server_name = ""
+mail_from = ""
+mail_to= ""
+server_port = 1
 
 [ou]
 base = "OU=OU, DC=DC, DC=DC"
@@ -7,5 +14,6 @@ disabled = "OU=OU, DC=DC, DC=DC"
 reunisten = "OU=OU, DC=DC, DC=DC"
 
 [user]
-pw="verysafepassword"
-domain="domain.local"
+pw=verysafe
+domain=athome
+template_user =thetemplateuser
