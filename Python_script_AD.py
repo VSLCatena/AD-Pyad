@@ -246,8 +246,12 @@ def update(desc,name,phone,mail):
  "update attributes (if user in AD and in LA)"
  try: 
   user = pyad.aduser.ADUser.from_cn(name)
-  old_mail=user.get_attribute("mail")[0]
-  old_phone=user.get_attribute("telephoneNumber")[0]
+  try:
+   old_mail=user.get_attribute("mail")[0]
+   old_phone=user.get_attribute("telephoneNumber")[0]
+  except:
+   old_mail=None
+   old_phone=None
   #user.clear_attribute("mail")
   #user.append_to_attribute("mail", mail)
   user.update_attribute("description",desc)
@@ -399,7 +403,7 @@ def write_report():
   f.write(str(user_es)+"\n")
  f.write("\n") 
  f.write("== Edit/Unsuccesfull ==\n")
- for user_cu in stats[1][1]:
+ for user_eu in stats[1][1]:
   f.write(str(user_eu)+"\n")
  f.write("\n") 
  f.write("== Move/Succesfull ==\n")
@@ -411,12 +415,12 @@ def write_report():
   f.write(str(user_mu)+"\n")
  f.write("\n")
  f.write("== Enable/Succesfull ==\n")
- for user_ms in stats[3][0]:
-  f.write(str(user_ms)+"\n")
+ for user_as in stats[3][0]:
+  f.write(str(user_as)+"\n")
  f.write("\n") 
  f.write("== Enable/Unsuccesfull ==\n")
- for user_mu in stats[3][1]:
-  f.write(str(user_mu)+"\n")
+ for user_au in stats[3][1]:
+  f.write(str(user_au)+"\n")
  f.write("\n") 
  f.close()
  log(timestamp("Report has been written and saved to file"))
