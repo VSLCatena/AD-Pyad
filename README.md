@@ -39,6 +39,8 @@ Create folder with Python_script_AD.py, config.cfg and two folders called 'logs'
 
 Fill in config.cfg with desired values
 
+Get a CSV-file with the following header: ['description','name','phone','mail']
+
 Usage
 ============
 In CMD
