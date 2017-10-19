@@ -264,8 +264,8 @@ def update(desc,name,phone,mail):
   info=[desc,name,update]
   stats[1][0].append(info)
  except Exception as e:
-  log(timestamp("Error in function (update) for ("+user_cn+"): "+str(e)))
-  stats[1][1].append(user_cn+" | Error: "+str(e))
+  log(timestamp("Error in function (update) for ("+name+"): "+str(e)))
+  stats[1][1].append(name+" | Error: "+str(e))
   
  return 
    
