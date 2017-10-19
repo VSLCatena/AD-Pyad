@@ -3,9 +3,13 @@ Introduction
 Using a CSV-file and pyad (https://github.com/zakird/pyad) to check AD and either create, move, edit or enable objects.
 
 This script will create four sets: 
+
 csv not in AD = create,
+
 ad not in csv = move,
+
 in AD and in csv = edit,
+
 disabled users in AD = enable
 
 Create a user
