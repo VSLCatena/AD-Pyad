@@ -236,7 +236,7 @@ def create(desc,name,phone=None,mail=None,en=False,pw=user_pw,domain=user_domain
   new_user.update_attribute("description",desc)
   new_user.update_attribute("profilePath","\\\\"+domain+"\\dfs\\Profiles\\"+un)
   new_user.set_user_account_control_setting('PASSWD_NOTREQD',False)
-  stats[0][0].append(user)
+  stats[0][0].append(name)
  except Exception as e:
   log(timestamp("Error in function (create) for ("+name+"): "+str(e)))
   stats[0][1].append(name+" | Error: "+str(e)) 
