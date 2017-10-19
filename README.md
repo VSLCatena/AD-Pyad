@@ -61,3 +61,6 @@ Default recommended usage:
 
     Python_script_AD.py -m cem -d 0 -r 2 
     
+To do a simulation:
+
+    Python_script_AD.py -d 0 -r 2 
