@@ -177,7 +177,7 @@ def readcsv(filename):
   for users in mycsv:
    la_users.append(users)
 
- if (la_users[0]!=['lidnummer','naam','telefoonnummer','emailadres']):
+ if (la_users[0]!=['description','name','phone','mail']):
   str_header=(', '.join('"' + item + '"' for item in la_users[0]))
   log(timestamp("CSV-header incorrect. Header is ["+str_header+"]. Exiting"))
   quit()
