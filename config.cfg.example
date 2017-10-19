@@ -1,17 +1,16 @@
 [general]
 filename =  iamahappycsv.csv
-debuglevel = 0
 
 [mail]
-server_name = ""
-mail_from = ""
-mail_to= ""
-server_port = 1
+server_name = 
+mail_from = 
+mail_to= 
+server_port = 
 
 [ou]
-base = "OU=OU, DC=DC, DC=DC"
-disabled = "OU=OU, DC=DC, DC=DC"
-reunisten = "OU=OU, DC=DC, DC=DC"
+base = OU=OU, DC=DC, DC=DC
+disabled = OU=OU, DC=DC, DC=DC
+reunisten = OU=OU, DC=DC, DC=DC
 
 [user]
 pw=verysafe
