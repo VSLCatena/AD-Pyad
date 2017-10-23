@@ -428,7 +428,7 @@ def write_report():
  
 
 def send_mail(filename=None):
- server = smtplib.SMTP(server_name,server_port,'catena-194-171-106-2.leidenuniv.nl')
+ server = smtplib.SMTP(server_name,server_port)
  msg = MIMEMultipart()
  msg['From'] = mail_from
  msg['To'] = mail_to
