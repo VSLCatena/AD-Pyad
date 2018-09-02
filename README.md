@@ -20,7 +20,7 @@ Enable users when disabled.
 Requirements
 ============
 
-Windows Server 2008r2 or better
+Windows Server 2008r2 or higher
 
 Python 2.7.x
 
@@ -35,11 +35,11 @@ Python 2.7.x
     
 pyad requires pywin32, available at http://sourceforge.net/projects/pywin32.
 
-Create folder with Python_script_AD.py, config.cfg and two folders called 'logs' and 'reports'
+Create folder with Python_script_AD.py, config.cfg and three folders called 'logs', 'data' and 'reports'
 
 Fill in config.cfg with desired values
 
-Get a CSV-file with the following header: ['description','name','phone','mail']
+Get a CSV-file with the following headers and row data: [lidnummer;name;username;phone;email]
 
 Usage
 ============
@@ -61,7 +61,7 @@ Parameters:
 
 Default recommended usage:
 
-    Python_script_AD.py -m cem -d 0 -r 2 
+    Python_script_AD.py -m c -d 0 -r 2 
     
 To do a simulation:
 

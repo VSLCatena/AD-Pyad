@@ -1,18 +1,23 @@
 [general]
 filename =  iamahappycsv.csv
+special_folder =  C:\veryspecialfoldertoautomatethis\
+folder =  C:\workingfolder
+delimiter = ,
 
 [mail]
-server_name = 
-mail_from = 
-mail_to= 
-server_port = 
+server_name = server.company.ext
+server_port = 123
+mail_from = fromme
+mail_to= toyou
+local_hostname = mypc
 
 [ou]
-base = OU=OU, DC=DC, DC=DC
-disabled = OU=OU, DC=DC, DC=DC
-reunisten = OU=OU, DC=DC, DC=DC
+base = OU=temp, OU=temp, OU=temp, DC=temp, DC=temp
+base_group = CN=temp,OU=temp,OU=temp,OU=temp,DC=temp,DC=temp
+disabled = OU=temp,OU=temp, OU=temp, OU=temp, DC=temp, DC=temp
+reunisten = OU=temp, OU=temp, OU=temp, DC=temp, DC=temp
 
 [user]
-pw=verysafe
-domain=athome
-template_user =thetemplateuser
+pw=defaultpassword,but is now random for every user
+domain=temp.temp
+template_user =CSV_row_for_template user
