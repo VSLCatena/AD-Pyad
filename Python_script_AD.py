@@ -149,6 +149,7 @@ def timestamp(string=""):
  return data
  
 log(timestamp("Starting.... Settings are loaded"))
+log(timestamp("Please check the delimiter when you encounter error"))
 
 
 def username(name):
@@ -189,8 +190,8 @@ def column(matrix, i):
 def readcsv(filename):
 #
 #  read CSV
-# header: lidnummer	name username	phone	email
-#  lidnummer;name;username;phone;email
+# header: name, duplicate_name, username, duplicate_username, lidnummber,phone,email
+#  
 #
 #
  la_users=[]
@@ -199,15 +200,15 @@ def readcsv(filename):
    reader = csv.reader(f,delimiter = csv_del)
    mycsv = list(reader)
    for users in mycsv:
-    if users[2]=="":
+    if users[2]=="": #USERNAME
      users[2]=None
-    if users[3]=="":
-     users[3]=None
-    if users[4]=="":
-	 users[4]=None
+    if users[5]=="": #PHONE
+     users[5]=None
+    if users[6]=="": #MAIL
+	 users[6]=None
     la_users.append(users) 
 
-   if (la_users[0]!=['lidnummer','name','username','phone','email']):
+   if (la_users[0]!=['name','duplicate_name','username','duplicate_username','lidnummer','phone','email']):
     str_header=(', '.join('"' + item + '"' for item in la_users[0]))
     log(timestamp("CSV-header incorrect. Header is ["+str_header+"]. Exiting"))
     quit()
@@ -594,14 +595,14 @@ def execution():
 
  if options["create"]==True:
   for user in list_create:
-   create(user[0],user[1],user[2],user[3],user[4],True)
+   create(user[4],user[0],user[2],user[5],user[6],True)
    time.sleep(1)
 
 
   
  if options["edit"]==True:
   for user in list_edit:
-   update(user[0],user[1],user[2],user[3])
+   update(user[4],user[0],user[2],user[5])
 
  
  if options["move"]==True:
@@ -632,18 +633,17 @@ def pre():
  la_users=readcsv(filename)
  ad_users=readAD()
  
+ 
 #create set from dataset
- s=set(column(la_users,0)) #membership number
+ s=set(column(la_users,4)) #membership number
  t=set(column(ad_users,0)) #membership number. 
- 
-
- 
+  
  #do set functions
  c = s - t #create based on LA - new member
  m = t - s #move based on AD - old member
  e = s & t #edit based on LA - current member
- list_create=filter_list(la_users,c,0) #list of strings???
- list_edit=filter_list(la_users,e,0) 
+ list_create=filter_list(la_users,c,4) #list of strings???
+ list_edit=filter_list(la_users,e,4) 
  list_move=filter_list(ad_users,m,0) #problems, m contains one "" and list_move all ""
  list_disabled=[x for x in ad_users if x[5] in [514,546,66050]]
  list_enabled=[x for x in ad_users if x[5] in [512,544,66048]];
